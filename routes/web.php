@@ -14,5 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+
+    $data = [
+        'university' => 'Milano',
+        'university_milano' =>
+        [
+            'departments',
+            'courses',
+            'students',
+            'exams'
+        ]
+    ];
+    return view('home', $data);
+})->name('home');
+
+
+Route::get('/university', function () {
+
+
+    return view('university');
+})->name('university');
